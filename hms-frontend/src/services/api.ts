@@ -4,7 +4,6 @@ const api = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL || 'https://healthcare-system-backend-qyti.onrender.com/api'
 });
 
-// Attach JWT token to requests if authenticated
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token') || localStorage.getItem('atrium_token');
     if (token) {
